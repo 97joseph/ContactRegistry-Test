@@ -38,7 +38,7 @@ Ensure you have the following installed on your system:
 ---
 ### **Setup Steps**
 1. **Clone the repository**
-git clone https://bitbucket.org/project_lab/contactregistry/src/master/<br>
+git clone https://bitbucket.org/testasedfgy/contactregistry-test/src/main//<br>
 cd contactregistry
 
 2. **Database Setup**
