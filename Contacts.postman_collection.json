@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "1881fab1-99f6-46a7-a9aa-2cad2708b103",
+		"name": "Contacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22113006"
+	},
+	"item": [
+		{
+			"name": "CaptureContacts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Kevin Wafula\",\r\n    \"phoneNumber\": \"0712345678\",\r\n    \"email\": \"kevin@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ContactRegistry_war/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ContactRegistry_war",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RetrieveContacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/ContactRegistry_war/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"ContactRegistry_war",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateContacts",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"James Wafula\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/ContactRegistry_war/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"ContactRegistry_war",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteContact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/ContactRegistry_war/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"ContactRegistry_war",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\" (empty string)",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" \r\n                  xmlns:proj=\"http://soap.project.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <proj:getContactsByOrganization>\r\n         <organization>Kenya Power</organization>\r\n      </proj:getContactsByOrganization>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/soap/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"soap",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
